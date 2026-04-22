@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
-import { Download, History, ArrowRight, FileText } from 'lucide-react'
+import { Download, History, ArrowRight, FileText, Shield } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import UploadSection from '../components/UploadSection'
 import SearchBar from '../components/SearchBar'
@@ -25,7 +25,7 @@ export default function Dashboard() {
       ])
       setArticles(articlesData.articles || [])
       setTotal(articlesData.total || 0)
-      setBatches(batchesData || [])
+      setBatches(Array.isArray(batchesData) ? batchesData : [])
     } catch (err) {
       console.error('Failed to fetch data:', err)
     } finally {
@@ -133,9 +133,9 @@ export default function Dashboard() {
               </h2>
             </div>
             
-            {batches.length > 0 ? (
+            {Array.isArray(batches) && batches.length > 0 ? (
               <div className="space-y-2">
-                {batches.map((batch) => (
+                {batches?.map((batch) => (
                   <Link 
                     key={batch.batch_id} 
                     to={`/report/${batch.batch_id}`}

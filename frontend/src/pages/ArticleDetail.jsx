@@ -4,10 +4,10 @@ import { ArrowLeft, Clock, Tag, MapPin, User, Building2, Globe, Shield, Sparkles
 import { getArticle } from '../services/api'
 
 const ENTITY_ICONS = {
-  Person: User,
-  Organization: Building2,
-  Location: MapPin,
-  Miscellaneous: Globe,
+  PER: User,
+  ORG: Building2,
+  LOC: MapPin,
+  MISC: Globe,
 }
 
 export default function ArticleDetail() {

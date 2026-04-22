@@ -160,9 +160,8 @@ export default function BatchReport() {
         </div>
       </div>
 
-      {/* Synchronized Unit Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {report.articles.map((article) => (
+        {Array.isArray(report?.articles) && report.articles.map((article) => (
           <ArticleCard
             key={article._id}
             article={article}
