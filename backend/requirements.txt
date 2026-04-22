@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+pydantic-settings
+motor
+pymupdf4llm
+groq
+python-multipart
+requests
+python-dotenv
+aiofiles
